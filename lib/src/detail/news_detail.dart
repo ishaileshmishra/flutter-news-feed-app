@@ -16,7 +16,12 @@ class _MyNewsDetailsState extends State<NewsDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.news.title, style: GoogleFonts.lato(),),
+          //title: Text(widget.news.title, style: GoogleFonts.lato(),),
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          leading: GestureDetector(
+            onTap: () => Navigator.pop(context),
+              child: Icon(Icons.close, color: Colors.grey,)),
         ),
         body: Card(
           elevation: 2,

@@ -24,11 +24,14 @@ class _MyHomePageState extends State<HomePage> {
     fetchNews();
   }
 
-  Future fetchNews() async {
+  String getCurrentDate(){
     var now = new DateTime.now();
-    var currentDate = "${now.day}-${now.month}-${now.year}";
+    return "${now.year}-${now.month}-${now.day}";
+  }
+
+  Future fetchNews() async {
     const newsAPI =
-        "http://newsapi.org/v2/everything?q=apple&from=2020-06-19&to=2020-06-19&sortBy=popularity&apiKey=5c66f9ee9171404f9adb600b107c71e0";
+        "http://newsapi.org/v2/everything?q=apple&from=2020-6-21&to=2020-06-19&sortBy=popularity&apiKey=5c66f9ee9171404f9adb600b107c71e0";
     var response = await http.get(newsAPI);
     if (response.statusCode == 200) {
       var newsHeadlines = json.decode(response.body);
@@ -62,28 +65,28 @@ class _MyHomePageState extends State<HomePage> {
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             padding: EdgeInsets.all(20),
-            child: Text('Good Morning\n21-06-2020 (Monday)',
+            child: Text('Good Morning\n${getCurrentDate().toLowerCase()} (Monday)',
                 style: GoogleFonts.lato(
                     fontWeight: FontWeight.bold, fontSize: 17)),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "Shailesh's Briefing",
-              style:
-                  GoogleFonts.lato(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "Top 5 stories at the moment...",
-              style:
-                  GoogleFonts.lato(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ),
+//          Container(
+//            padding: EdgeInsets.symmetric(horizontal: 20),
+//            child: Text(
+//              "Shailesh's Briefing",
+//              style:
+//                  GoogleFonts.lato(fontSize: 30, fontWeight: FontWeight.bold),
+//            ),
+//          ),
+//          Container(
+//            padding: EdgeInsets.symmetric(horizontal: 20),
+//            child: Text(
+//              "Top 5 stories at the moment...",
+//              style:
+//                  GoogleFonts.lato(fontSize: 16, fontWeight: FontWeight.bold),
+//            ),
+//          ),
           SizedBox(
-            height: 100,
+            height: 80,
             child: Container(
               padding: EdgeInsets.all(10),
               child: ListView.builder(
