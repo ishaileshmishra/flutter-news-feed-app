@@ -1,14 +1,8 @@
-# indian_news
+# Global News Headlines
 
-A new Flutter project.
+Here is screenshot of the news application
 
-## Getting Started
+![alt text](https://github.com/ishaileshmishra/indian_news/blob/master/assets/scr1.png?raw=true)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-![alt text](http://url/to/img.png)
-
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ishaileshmishra/indian_news/blob/master/assets/scr2.png?raw=true)
 
