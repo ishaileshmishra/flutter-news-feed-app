@@ -31,7 +31,7 @@ class _MyHomePageState extends State<HomePage> {
 
   Future fetchNews() async {
     const newsAPI =
-        "http://newsapi.org/v2/everything?q=apple&from=2020-6-21&to=2020-06-19&sortBy=popularity&apiKey=5c66f9ee9171404f9adb600b107c71e0";
+        "http://newsapi.org/v2/everything?q=apple&from=2020-6-21&to=2020-06-19&sortBy=popularity&apiKey=Your_API_KEY";
     var response = await http.get(newsAPI);
     if (response.statusCode == 200) {
       var newsHeadlines = json.decode(response.body);
